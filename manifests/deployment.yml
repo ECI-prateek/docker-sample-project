@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: eciprateekdockersampleproject 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eciprateekdockersampleproject
+  template:
+    metadata:
+      labels:
+        app: eciprateekdockersampleproject 
+    spec:
+      containers:
+        - name: eciprateekdockersampleproject 
+          image: akstestingdapr.azurecr.io/eciprateekdockersampleproject
+          ports:
+          - containerPort: 80
